@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block main %}
+<div>
+    <h1 class="display-1 mx-auto" style="text-align: center;"> Submissions</h1>
+</div>
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-l-3 row-cols-xl-3 row-cols-xxl-4">
+        {% for i in data %}
+        <div class="col my-3">
+            <div class="card h-100" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{i[3]}}</h5>
+                    <p class="card-text">{{i[4]}}</p>
+
+                </div>
+                <h7 class="card-footer">
+                    <p><b>Team Name:</b> {{i[1]}}</p>
+                    <form action="/details/{{i[0]}}">
+                        <button type="submit" class="btn btn-primary btn-sm">Check Project</a>
+                    </form>
+
+                </h7>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock main %}
